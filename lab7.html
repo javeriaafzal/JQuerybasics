@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to create a FORM and an INPUT element.</p>
+
+<button id="hide" onclick="myForm()">Create form</button>
+<button onclick="myTextbox()">Create text field</button>
+<button onclick="myText()">Create Label</button>
+<button onclick="myPass()">Create password field</button>
+<button onclick="myButton()">Create Button</button>
+<button onclick="myr()">Create Radio Button</button>
+<button onclick="myc()">Create Check</button>
+<script >
+
+
+   
+
+function myForm() {
+    var x = document.createElement("FORM");
+    x.setAttribute("id", "myForm");
+    document.body.appendChild(x);
+	
+	var btn = document.createElement("BUTTON");
+
+    var t = document.createTextNode("Submit");
+    btn.appendChild(t);
+    document.getElementById("myForm").appendChild(btn);
+	var b = document.createElement("br");
+	document.getElementById("myForm").appendChild(b);
+	var hidden = false;
+    
+      
+    document.getElementById("hide").style.visibility = 'hidden';
+        
+	
+
+    
+}
+function myTextbox() {
+   var y = document.createElement("INPUT");
+   var b = document.createElement("br");
+    y.setAttribute("type", "text");
+	var val = prompt("Please enter the form field", "eg .First Name");
+    y.setAttribute("value", val);
+    document.getElementById("myForm").appendChild(y);
+	document.getElementById("myForm").appendChild(b);
+
+    
+}
+
+function myText() {
+   var x = document.createElement("p");
+   var val = prompt("Please enter the label field", "eg .First Name");
+   var y = document.createTextNode(val);
+    
+	
+    x.appendChild(y);
+    document.getElementById("myForm").appendChild(x);
+	
+
+    
+}
+function myPass() {
+   var y = document.createElement("INPUT");
+    y.setAttribute("type", "password");
+    document.getElementById("myForm").appendChild(y);
+
+    
+}
+
+function myButton(){
+ var btn = document.createElement("BUTTON");
+ var val = prompt("Please enter the button label", "Click me");
+    var t = document.createTextNode(val);
+    btn.appendChild(t);
+    document.body.appendChild(btn);
+}
+
+function myr(){
+ var btn = document.createElement("Input");
+ var l = document.createElement("label");
+ var b = document.createElement("br");
+ btn.type="radio";
+ var val = prompt("Please enter the radio button label", "Click me");
+ 
+  l.appendChild(document.createTextNode(val));
+  l.appendChild(btn);  
+    
+    document.getElementById("myForm").appendChild(l);
+	document.getElementById("myForm").appendChild(b);
+}
+
+function myc(){
+ var btn = document.createElement("Select");
+ 
+ var l = document.createElement("label");
+ var b = document.createElement("br");
+ //btn.type="checkbutton";
+ var val = prompt("Please enter the select", "Check me");
+ 
+  l.appendChild(document.createTextNode(val));
+  l.appendChild(btn);  
+    
+    document.getElementById("myForm").appendChild(l);
+	document.getElementById("myForm").appendChild(b);
+}
+</script>
+
+</body>
+</html>
